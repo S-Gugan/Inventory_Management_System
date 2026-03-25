@@ -1,0 +1,17 @@
+.git
+.gitignore
+myenv
+__pycache__
+**/__pycache__
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache
+.mypy_cache
+.vscode
+
+frontend/node_modules
+frontend/build
+
+*.log
+*.sqlite3
