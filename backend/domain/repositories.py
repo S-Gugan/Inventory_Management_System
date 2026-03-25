@@ -4,7 +4,7 @@ from domain.entities import ProductEntity
 class IProductRepository(ABC):
 
     @abstractmethod
-    def get_by_id(self, product_id: int):
+    def get_by_id(self, product_id: int) -> ProductEntity | None:
         pass
 
     @abstractmethod
