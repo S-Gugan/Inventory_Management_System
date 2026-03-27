@@ -19,7 +19,7 @@ services:
 
   backend:
     build:
-      context: .
+      context: ./backend
       dockerfile: Dockerfile
     container_name: ims-backend
     restart: unless-stopped
@@ -31,6 +31,21 @@ services:
       SECRET_KEY: change_me_to_a_long_random_secret
     ports:
       - "8000:8000"
+    volumes:
+      - ./backend:/app
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: ims-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
+    volumes:
+      - ./frontend:/app
 
 volumes:
   postgres_data:
